@@ -39,3 +39,21 @@ For `POST` requests:
   }
 }
 ```
+
+For `GET` request:
+```
+{
+  "data": [
+    {
+      "id": "1",
+      "type": "search-results",
+      "links": {
+        "self": "https://flickry-api.herokuapp.com/search-results/1"
+      },
+      "attributes": {
+        "name": "girl in fire"
+      }
+    }
+  ]
+}
+```
