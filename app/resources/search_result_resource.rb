@@ -1,7 +1,13 @@
 class SearchResultResource < JSONAPI::Resource
-  attributes :name
-  attribute :output
-  after_create :output
+  attributes :name, :output
+
+  def fetchable_fields
+    if(context[:request_method] == "POST")
+      super
+    else
+      super - [:output]
+    end
+  end
 
   def output
     search_results = search_for_photos(name)
@@ -21,7 +27,8 @@ class SearchResultResource < JSONAPI::Resource
   end
 
   def find_large_photo(photo_details)
-    photo_details.find { |s| s.label == 'Original' || s.label == 'Large' }.source
+    photo = photo_details.find { |s| s.label == 'Original' || s.label == 'Large' }
+    photo ? photo.source : "no large photo"
   end
 
   def create_response(search_results)
