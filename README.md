@@ -1,9 +1,12 @@
 # Flickry API
-An app that uses the Flickr API to search for any media
+An app that uses the Flickr API to search for any media. Using 
+[JSONAPI Spec](http://jsonapi.org/) and 
+[jsonapi-resources](https://github.com/cerebris/jsonapi-resources) to implement
+it.
 
 # Endpoints
-`GET https://flickry-api.herokuapp.com/search-results`
-`POST https://flickry-api.herokuapp.com/search-results`
+- `GET` `https://flickry-api.herokuapp.com/search-results`
+- `POST` `https://flickry-api.herokuapp.com/search-results`
 
 # Sample responses
 For `POST` requests:
