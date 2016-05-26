@@ -9,6 +9,7 @@ group :development, :test do
   gem 'spring'
   gem 'rspec-rails'
   gem 'factory_girl_rails'
+  gem 'pry-byebug'
 end
 
 group :development do
